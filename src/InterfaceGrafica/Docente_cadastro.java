@@ -5,19 +5,26 @@
  */
 package InterfaceGrafica;
 
+import javax.swing.JDesktopPane;
+
 /**
  *
  * @author Pedro
  */
 public class Docente_cadastro extends javax.swing.JInternalFrame {
 
+    JDesktopPane JDesktopPanePrincipal;
     /**
      * Creates new form Docente_cadastro
      */
     public Docente_cadastro() {
         initComponents();
     }
-
+    public Docente_cadastro(JDesktopPane parametro){
+        this();
+        
+        this.JDesktopPanePrincipal = parametro;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
