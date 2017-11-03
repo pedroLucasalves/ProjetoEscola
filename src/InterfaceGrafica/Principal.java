@@ -46,6 +46,11 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Principal");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         javax.swing.GroupLayout jDesktopPanePrincipalLayout = new javax.swing.GroupLayout(jDesktopPanePrincipal);
         jDesktopPanePrincipal.setLayout(jDesktopPanePrincipalLayout);
@@ -132,11 +137,18 @@ public class Principal extends javax.swing.JFrame {
             this.jDesktopPanePrincipal.add(tela02);
             tela02.setVisible(true);
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }//GEN-LAST:event_jMenuItemDicenteActionPerformed
 
     private void jMenuItemNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNotaActionPerformed
-   
+        try {
+           Nota_cadastro tela05 = new Nota_cadastro(jDesktopPanePrincipal);
+           this.jDesktopPanePrincipal.add(tela05);
+           tela05.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_jMenuItemNotaActionPerformed
 
     private void jMenuItemDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDocenteActionPerformed
@@ -150,12 +162,28 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemDocenteActionPerformed
 
     private void jMenuItemTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTurmaActionPerformed
-        
+        try {
+            Turma_cadastro tela03 = new Turma_cadastro(jDesktopPanePrincipal);
+            this.jDesktopPanePrincipal.add(tela03);
+            tela03.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_jMenuItemTurmaActionPerformed
 
     private void jMenuItemDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDisciplinaActionPerformed
-      
+        try {
+            Disciplina_cadastro tela04 = new Disciplina_cadastro(jDesktopPanePrincipal);
+            this.jDesktopPanePrincipal.add(tela04);
+            tela04.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_jMenuItemDisciplinaActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+       fecharTela();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -205,4 +233,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemNota;
     private javax.swing.JMenuItem jMenuItemTurma;
     // End of variables declaration//GEN-END:variables
+    private void fecharTela(){
+        int resposta = JOptionPane.showConfirmDialog(null,"Deseja sair do sistema?",
+                                  "Sistema Escola",JOptionPane.YES_OPTION);
+         if(resposta == JOptionPane.YES_OPTION){
+             System.exit(0);
+         }                         
+    }
 }
+

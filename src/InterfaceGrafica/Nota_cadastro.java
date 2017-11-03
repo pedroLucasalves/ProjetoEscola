@@ -11,19 +11,17 @@ import javax.swing.JDesktopPane;
  *
  * @author Pedro
  */
-public class Dicente_cadastro extends javax.swing.JInternalFrame {
-    JDesktopPane jDesktopPanePrincipal;
+public class Nota_cadastro extends javax.swing.JInternalFrame {
+
     /**
-     * Creates new form Dicente_cadastro
+     * Creates new form Nota_cadastro
      */
-    public Dicente_cadastro() {
+    public Nota_cadastro() {
         initComponents();
     }
 
-    Dicente_cadastro(JDesktopPane parametro) {
-        this();
-        
-        this.jDesktopPanePrincipal = parametro;
+    Nota_cadastro(JDesktopPane jDesktopPanePrincipal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -37,7 +35,7 @@ public class Dicente_cadastro extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Cadastro de Dicente");
+        setTitle("Notas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

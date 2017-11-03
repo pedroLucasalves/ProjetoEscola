@@ -5,17 +5,27 @@
  */
 package InterfaceGrafica;
 
+import javax.swing.JDesktopPane;
+
 /**
  *
  * @author Pedro
  */
 public class Disciplina_cadastro extends javax.swing.JInternalFrame {
 
+    JDesktopPane jDesktopPanePrincipal;
+
     /**
      * Creates new form Disciplina_cadastro
      */
     public Disciplina_cadastro() {
         initComponents();
+    }
+
+    Disciplina_cadastro(JDesktopPane parametro) {
+        this();
+        
+        this.jDesktopPanePrincipal = parametro;
     }
 
     /**
